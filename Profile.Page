@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscles Service Center - A5 Premium Brochure</title>
+    <!-- استدعاء الأيقونات والخطوط الرياضية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- استدعاء خط Changa الرياضي العريض وخط Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght=800&family=Cairo:wght=700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-glow: #bf1e2e;
+            --glow-shadow: 0 0 25px rgba(191, 30, 46, 0.8), 0 0 50px rgba(191, 30, 46, 0.4);
+        }
+        
+        /* ضبط خلفية الصفحة بالكامل باستخدام اسم صورتك الخاص */
+        body {
+            background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.85)), url('Gemini_Generated_Image_76xno776xno776xn.png') center center / cover no-repeat fixed;
+            color: #ffffff;
+            font-family: 'Changa', 'Cairo', sans-serif;
+            margin: 0;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        /* كارت البروشور مقاس A5 */
+        .brochure-page {
+            width: 420px;
+            height: 594px;
+            background-color: #050505;
+            border: 2px solid #1a1a1a;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+        }
+        /* الخلفية المعتمة الخاصة بالكروت نفسها */
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(24, 5, 7, 0.92), rgba(5, 5, 5, 0.96)), 
+                        url('https://images.unsplash.com/photo-1579758629938-03607ccdbaba?q=80&w=1000&auto=format&fit=crop') center/cover;
+            filter: blur(1px);
+            z-index: 1;
+        }
+        /* لضمان ظهور العناصر فوق الخلفية المعتمة */
+        .brochure-page > * {
+            position: relative;
+            z-index: 2;
+        }
+        /* حاوية اللوجو الشفافة */
+        .logo-clean-container {
+            width: 240px;
+            height: 240px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        .logo-clean-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        /* تصميم التايبوجرافي الرياضي */
+        .sports-title-container {
+            width: 100%;
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-sports-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #ffffff; 
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(191, 30, 46, 0.9), 
+                         0 0 20px rgba(191, 30, 46, 0.7), 
+                         0 0 35px rgba(191, 30, 46, 0.4);
+        }
+        .sub-sports-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--primary-glow);
+            letter-spacing: 4px;
+            margin-top: 6px;
+            text-shadow: 0 0 10px rgba(191, 30, 46, 0.6);
+        }
+
+        /* الأيقونات الأربعة */
+        .logo-features-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .logo-feature-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(191, 30, 46, 0.35);
+            border-radius: 10px;
+            padding: 8px;
+            width: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            color: #ccc;
+            font-family: 'Cairo', sans-serif;
+        }
+        .logo-feature-box i {
+            font-size: 16px;
+            color: var(--primary-glow);
+            filter: drop-shadow(0 0 5px #bf1e2e);
+        }
+        /* روابط ومربع السوشيال ميديا */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 12px;
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: right;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .link-item:hover {
+            background: rgba(191, 30, 46, 0.15);
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 12px rgba(191, 30, 46, 0.4);
+        }
+        .link-item i {
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+        .link-item.copied {
+            border-color: #2ecc71 !important;
+            background: rgba(46, 204, 113, 0.2) !important;
+            box-shadow: 0 0 12px rgba(46, 204, 113, 0.4) !important;
+        }
+        
+        .fa-globe { color: #00a8ff; }
+        .fa-phone { color: #2ecc71; }
+        .fa-whatsapp { color: #25D366; }
+        .fa-envelope { color: #e74c3c; }
+        .fa-facebook { color: #1877f2; }
+        .fa-instagram { color: #e1306c; }
+        .fa-tiktok { color: #ffffff; }
+        .fa-youtube { color: #ff0000; }
+        
+        .headline {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(191, 30, 46, 0.4);
+            padding-bottom: 10px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .footer-text {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="brochure-container" style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
+        
+        <!-- الوجه الأول: الغلاف الرئيسي -->
+        <div class="brochure-page" id="front-page">
+            <div class="background-overlay"></div>
+            
+            <div class="logo-clean-container">
+                <img src="تصميم بدون عنوان.png" alt="Muscles Service Center Logo">
+            </div>
+            
+            <div class="sports-title-container">
+                <h1 class="main-sports-title">مركز خدمة العضلات</h1>
+                <div class="sub-sports-title">للمكملات الغذائية</div>
+            </div>
+
+            <div class="logo-features-grid">
+                <div class="logo-feature-box"><i class="fa-solid fa-apple-whole"></i>Nutrition</div>
+                <div class="logo-feature-box"><i class="fa-solid fa-gear"></i>Performance</div>
+                <div class="logo-feature-box"><i class="fa-solid fa-dumbbell"></i>Recovery</div>
+                <div class="logo-feature-box"><i class="fa-solid fa-clipboard-list"></i>Results</div>
+            </div>
+
+            <div class="footer-text" style="color: var(--primary-glow); text-shadow: 0 0 5px rgba(191,30,46,0.5); font-weight: bold; font-size: 13px;">
+                WE SERVICE YOUR MUSCLES
+            </div>
+        </div>
+
+        <!-- الوجه الثاني: روابط التواصل والبيانات المحدثة مع خاصية النسخ -->
+        <div class="brochure-page" id="back-page">
+            <div class="background-overlay" style="background: linear-gradient(rgba(24, 5, 7, 0.92), rgba(5, 5, 5, 0.97)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&auto=format&fit=crop') center/cover;"></div>
+            
+            <div class="headline">🌐 <span style="color: var(--primary-glow); text-shadow: 0 0 12px rgba(191, 30, 46, 0.4);">WWW.MUSCLESSERVICECENTER.COM</span></div>
+            
+            <div class="links-container">
+                <a href="https://www.facebook.com/MusclesServiceCenter" class="link-item" target="_blank" onclick="copyText(this, 'MusclesServiceCenter')">
+                    <i class="fa-brands fa-facebook"></i> <span class="text-content">MusclesServiceCenter</span>
+                </a>
+                <a href="https://www.instagram.com/muscles_servies_center/" class="link-item" target="_blank" onclick="copyText(this, '@muscles_servies_center')">
+                    <i class="fa-brands fa-instagram"></i> <span class="text-content">@muscles_servies_center</span>
+                </a>
+                <a href="https://www.youtube.com/channel/UCZLo5DI_A6vTyn7gRCeMkvw" class="link-item" target="_blank" onclick="copyText(this, 'Muscles Service Center channel')">
+                    <i class="fa-brands fa-youtube"></i> <span class="text-content">Muscles Service Center channel</span>
+                </a>
+                <a href="https://www.tiktok.com/@msc_muscles" class="link-item" target="_blank" onclick="copyText(this, '@msc_muscles')">
+                    <i class="fa-brands fa-tiktok"></i> <span class="text-content">@msc_muscles</span>
+                </a>
+                
+                <!-- زر الواتساب بالرقمين مع ميزة النسخ -->
+                <a href="https://wa.me/201038500989" class="link-item" target="_blank" onclick="copyText(this, '01038500989 / 01118292488')">
+                    <i class="fa-brands fa-whatsapp"></i> <span class="text-content">واتساب: 01038500989 / 01118292488</span>
+                </a>
+                
+                <!-- زر الهاتف بالرقمين مع ميزة النسخ -->
+                <div class="link-item" onclick="copyText(this, '01118292488 / 01038500989')">
+                    <i class="fa-solid fa-phone"></i> <span class="text-content">هاتف: 01118292488 / 01038500989</span>
+                </div>
+                
+                <a href="mailto:musclesservicecenter@gmail.com" class="link-item" onclick="copyText(this, 'musclesservicecenter@gmail.com')">
+                    <i class="fa-solid fa-envelope"></i> <span class="text-content">musclesservicecenter@gmail.com</span>
+                </a>
+            </div>
+            
+            <div class="footer-text" style="margin-bottom: 10px;">
+                MUSCLES SERVICE CENTER © 2026
+            </div>
+        </div>
+    </div>
+
+    <!-- كود الجافا سكربت المسؤول عن عملية النسخ والتنبيه -->
+    <script>
+        function copyText(element, textToCopy) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const textSpan = element.querySelector('.text-content');
+                const originalText = textSpan.innerHTML;
+                
+                element.classList.add('copied');
+                textSpan.innerHTML = "تم النسخ بنجاح! ✓";
+                
+                setTimeout(() => {
+                    element.classList.remove('copied');
+                    textSpan.innerHTML = originalText;
+                }, 1500);
+            }).catch(err => {
+                console.error('فشلت عملية النسخ: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
