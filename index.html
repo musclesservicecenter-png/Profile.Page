@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -112,7 +111,6 @@
             margin-top: 6px;
             text-shadow: 0 0 10px rgba(191, 30, 46, 0.6);
         }
-
         /* الأيقونات الأربعة */
         .logo-features-grid {
             display: flex;
@@ -200,6 +198,17 @@
             width: 100%;
             margin-top: 10px;
         }
+        /* تجميل ستايل الهايبر لينك للموقع ليكون متناسقاً تماماً */
+        .headline-link {
+            text-decoration: none;
+            color: var(--primary-glow);
+            text-shadow: 0 0 12px rgba(191, 30, 46, 0.4);
+            transition: all 0.3s ease;
+        }
+        .headline-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
         .footer-text {
             font-size: 11px;
             color: #888;
@@ -209,7 +218,6 @@
     </style>
 </head>
 <body>
-
     <div id="brochure-container" style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
         
         <!-- الوجه الأول: الغلاف الرئيسي -->
@@ -224,14 +232,12 @@
                 <h1 class="main-sports-title">مركز خدمة العضلات</h1>
                 <div class="sub-sports-title">للمكملات الغذائية</div>
             </div>
-
             <div class="logo-features-grid">
                 <div class="logo-feature-box"><i class="fa-solid fa-apple-whole"></i>Nutrition</div>
                 <div class="logo-feature-box"><i class="fa-solid fa-gear"></i>Performance</div>
                 <div class="logo-feature-box"><i class="fa-solid fa-dumbbell"></i>Recovery</div>
                 <div class="logo-feature-box"><i class="fa-solid fa-clipboard-list"></i>Results</div>
             </div>
-
             <div class="footer-text" style="color: var(--primary-glow); text-shadow: 0 0 5px rgba(191,30,46,0.5); font-weight: bold; font-size: 13px;">
                 WE SERVICE YOUR MUSCLES
             </div>
@@ -241,7 +247,10 @@
         <div class="brochure-page" id="back-page">
             <div class="background-overlay" style="background: linear-gradient(rgba(24, 5, 7, 0.92), rgba(5, 5, 5, 0.97)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&auto=format&fit=crop') center/cover;"></div>
             
-            <div class="headline">🌐 <span style="color: var(--primary-glow); text-shadow: 0 0 12px rgba(191, 30, 46, 0.4);">WWW.MUSCLESSERVICECENTER.COM</span></div>
+            <!-- 🔥 تعديل رابط الموقع هنا ليصبح هايبر لينك تفاعلي حقيقي يتأثر بالضغط والمرور بالماوس -->
+            <div class="headline">
+                🌐 <a href="https://www.musclesservicecenter.com" target="_blank" class="headline-link">WWW.MUSCLESSERVICECENTER.COM</a>
+            </div>
             
             <div class="links-container">
                 <a href="https://www.facebook.com/MusclesServiceCenter" class="link-item" target="_blank" onclick="copyText(this, 'MusclesServiceCenter')">
@@ -281,17 +290,21 @@
     <!-- كود الجافا سكربت المسؤول عن عملية النسخ والتنبيه -->
     <script>
         function copyText(element, textToCopy) {
+            // التحقق إذا كان العنصر عبارة عن رابط لمنع الانتقال الفوري قبل النسخ
+            if(element.tagName === 'A' && textToCopy.includes('http')) {
+                // نترك الرابط يعمل طبيعي لفتح القنوات التفاعلية
+            }
             navigator.clipboard.writeText(textToCopy).then(() => {
                 const textSpan = element.querySelector('.text-content');
-                const originalText = textSpan.innerHTML;
-                
-                element.classList.add('copied');
-                textSpan.innerHTML = "تم النسخ بنجاح! ✓";
-                
-                setTimeout(() => {
-                    element.classList.remove('copied');
-                    textSpan.innerHTML = originalText;
-                }, 1500);
+                if(textSpan) {
+                    const originalText = textSpan.innerHTML;
+                    element.classList.add('copied');
+                    textSpan.innerHTML = "تم النسخ بنجاح! ✓";
+                    setTimeout(() => {
+                        element.classList.remove('copied');
+                        textSpan.innerHTML = originalText;
+                    }, 1500);
+                }
             }).catch(err => {
                 console.error('فشلت عملية النسخ: ', err);
             });
